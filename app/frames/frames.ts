@@ -6,5 +6,5 @@ type State = {
 
 export const frames = createFrames<State>({
   basePath: "/frames",
-  initialState: { counter: 0 },
+  initialState: { counter: 500 },
 });
