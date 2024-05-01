@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
 import { getTokenUrl } from "frames.js";
-import { zora } from "viem/chains";
+import { zora, baseSepolia } from "viem/chains";
 import { frames } from "./frames";
 
 const nfts: {
@@ -11,9 +11,8 @@ const nfts: {
   {
     src: "https://ipfs.decentralized-content.com/ipfs/bafybeifs7vasy5zbmnpixt7tb6efi35kcrmpoz53d3vg5pwjz52q7fl6pq/cook.png",
     tokenUrl: getTokenUrl({
-      address: "0x99de131ff1223c4f47316c0bb50e42f356dafdaa",
-      chain: zora,
-      tokenId: "2",
+      address: "0x19b9E408ffCc239fAcc616fd709dEf6ad308d1a9",
+      chain: baseSepolia
     }),
   },
   {

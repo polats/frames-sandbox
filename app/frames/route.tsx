@@ -41,9 +41,9 @@ const frameHandler = frames(async (ctx) => {
       <Button action="post" target={{pathname: "/", query: {op: "-"}}}>
         Decrement
       </Button >,
-      <Button action="link" target={`https://www.google.com`}>
-        External
-      </Button>
+        <Button action="tx" target="/tx-data">
+        Mint a Cow
+      </Button>      
     ],
     state: { 
       counter: counter
