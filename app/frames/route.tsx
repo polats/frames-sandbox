@@ -2,8 +2,10 @@
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
 
+
 const MAX_RANDOM_NUMBER = 3000;
 const BASE_URI = "https://api.arcadians.io/"
+const NEXT_PUBLIC_HOST = process.env.NEXT_PUBLIC_HOST;
 
 const frameHandler = frames(async (ctx) => {
   const counter = ctx.message ? 
@@ -26,23 +28,26 @@ const frameHandler = frames(async (ctx) => {
  
 
   return {
-    image: data["image"],
+    image: NEXT_PUBLIC_HOST + "/intro.png", //data["image"],
 
     imageOptions: {
       aspectRatio: "1:1",
     },
     
-    textInput: "Say something",
+    textInput: "Name your Character",
     
     buttons: [
       <Button action="post" target={{pathname: "/", query: {op: "+"}}}>
-        Random
+        🎩
       </Button>,
+      <Button action="post" target={{pathname: "/", query: {op: "+"}}}>
+      👕
+      </Button>, 
       <Button action="post" target={{pathname: "/", query: {op: "-"}}}>
-        Decrement
+      👖
       </Button >,
         <Button action="tx" target="/tx-data">
-        Mint a Cow
+        Mint!
       </Button>      
     ],
     state: { 
