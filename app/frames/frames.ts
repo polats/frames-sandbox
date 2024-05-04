@@ -1,14 +1,5 @@
 import { createFrames } from "frames.js/next";
 
-type State = {
-  screen: string;
-  tokenId: number;
-};
-
-export const frames = createFrames<State>({
+export const frames = createFrames({
   basePath: "/frames",
-  initialState: { 
-    screen: "Intro",
-    tokenId: 0 
-  },
 });
