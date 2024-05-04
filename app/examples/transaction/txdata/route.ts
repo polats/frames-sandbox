@@ -57,7 +57,7 @@ export async function POST(
 
   return NextResponse.json({
     chainId: "eip155:84532", // OP Mainnet 10
-    method: "mint",
+    method: "eth_sendTransaction",
     params: {
       abi: onchainCowABI as Abi,
       to: NFT_ADDRESS,
