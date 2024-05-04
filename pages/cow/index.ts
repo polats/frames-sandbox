@@ -80,7 +80,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       </html>
     `);
     } catch (error) {
-      res.status(500).send(`Error: ${error.message}`);
+      // res.status(500).send(`Error: ${error.message}`);
     }
   } else {
     // If the request is not a POST, we know that we're not dealing with a
