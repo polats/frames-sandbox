@@ -3,14 +3,14 @@ import { createFrames } from "frames.js/next";
 type State = {
   screen: string;
   tokenId: number;
-  lefthand: string;
-  righthand: string;
-  head: string;
-  mouth: string;
-  eyes: string;
-  top: string;
-  bottom: string;
-  skin: string;
+  lefthand: string | null;
+  righthand: string | null;
+  head: string | null;
+  mouth: string | null;
+  eyes: string | null;
+  top: string | null;
+  bottom: string | null;
+  skin: string | null;
 };
 
 export const frames = createFrames<State>({
@@ -18,13 +18,13 @@ export const frames = createFrames<State>({
   initialState: { 
     screen: "Intro",
     tokenId: 0,
-    lefthand: "Rifle L",
-    righthand: "Tomb Raider Pistol R",
-    head: "Mechanic Brown Rat",
-    mouth: "Little Smile",
-    eyes: "Mischief",
-    top: "Ranger Tunic",
-    bottom: "White  Leggings",
-    skin: "Dark"
+    lefthand: null,
+    righthand: null,
+    head: null,
+    mouth: null,
+    eyes: null,
+    top: null,
+    bottom: null,
+    skin: null,
   },
 });
