@@ -6,27 +6,17 @@ const MAX_RANDOM_NUMBER = 3000;
 const BASE_URI = "https://api.arcadians.io/"
 const RENDERER_URL = "http://localhost:3001/api/image/"; // "https://ora-backend-renderer.vercel.app/api/image/"
 const NEXT_PUBLIC_HOST = process.env.NEXT_PUBLIC_HOST;
+const ROUTE = "/base";
 
 const frameHandler = frames(async (ctx) => {
   let tokenId = ctx.state.tokenId;
   let newScreen = ctx.state.screen;
   let imageSrc = NEXT_PUBLIC_HOST + "/intro.png";
-
-
-  console.log(ctx.state);
+  let displayText = "Head"
 
   tokenId =  Math.floor(Math.random() * MAX_RANDOM_NUMBER);
   newScreen = "Customize";
-  imageSrc = RENDERER_URL + tokenId + "?" + 
-  "lefthand=" + ctx.state.lefthand + "&" +
-    "righthand=" + ctx.state.righthand + "&" +
-    "head=" + ctx.state.head + "&" +
-    "mouth=" + ctx.state.mouth + "&" +
-    "eyes=" + ctx.state.eyes + "&" +
-    "top=" + ctx.state.top + "&" +
-    "bottom=" + ctx.state.bottom + "&" +
-    "skin=" + ctx.state.skin;
-
+  imageSrc = RENDERER_URL + tokenId;
 
   return {
     image: imageSrc,
@@ -35,33 +25,25 @@ const frameHandler = frames(async (ctx) => {
       aspectRatio: "1:1",
     },
     
-    textInput: "Name Your Character",
+    textInput: displayText,
     
     buttons: [
-        <Button action="post" target={{pathname: "/base", query: {op: "🎲"}}}>
-        🙂
+      <Button action="post" target={{pathname: ROUTE, query: {op: "🎲"}}}>
+      👀  
       </Button>,
-      <Button action="post" target={{pathname: "/armor", query: {op: "🎲"}}}>
-      👕
+      <Button action="post" target={{pathname: ROUTE, query: {op: "🎲"}}}>
+      👄
       </Button>, 
-      <Button action="post" target={{pathname: "/weapon", query: {op: "🎲"}}}>
-      ⚔️
+      <Button action="post" target={{pathname: ROUTE, query: {op: "🎲"}}}>
+      🧬
       </Button >,
-        <Button action="tx" target="/tx-data">
-        Mint!
+      <Button action="post" target={{pathname: "/customize", query: {op: "🎲"}}}>
+      🔙
       </Button>      
     ],
     state: { 
       screen: newScreen,
-      tokenId: tokenId,
-      lefthand: "Rifle L",
-      righthand: "Tomb Raider Pistol R",
-      head: "Mechanic Brown Rat",
-      mouth: "Little Smile",
-      eyes: "Mischief",
-      top: "Ranger Tunic",
-      bottom: "White  Leggings",
-      skin: "Dark"      
+      tokenId: tokenId
     }
   }
 })
