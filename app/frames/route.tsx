@@ -5,10 +5,7 @@ const NEXT_PUBLIC_HOST = process.env.NEXT_PUBLIC_HOST;
 
 const handler = frames(async () => {
   return {
-    image:  NEXT_PUBLIC_HOST + "/intro.png",
-    imageOptions: {
-      aspectRatio: "1:1",
-    },
+    image:  NEXT_PUBLIC_HOST + "/tcm.jpg",
     buttons: [
       // With query params
       <Button
