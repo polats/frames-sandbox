@@ -19,10 +19,12 @@ const machinesMiddleware: FramesMiddleware<any, TCMContext> = async (
 ) => {
 
   // if no button pressed, this is first run so skip calling the API
+  // @ts-ignore
   if (!ctx.pressedButton) {
     return next();
   }
 
+// @ts-ignore
   const stumpAddress = ctx.message?.inputText;
 
   if (!isAddress(stumpAddress)) {

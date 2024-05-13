@@ -43,6 +43,7 @@ const handler = frames(async (ctx) => {
     }}>
       {
         // show each machine in pod as a div
+        // @ts-ignore
         ctx.result.machinesInPod.map((machine, i) => {
           return <img 
                 src={NEXT_PUBLIC_HOST + "/" + machine + ".png"} 
