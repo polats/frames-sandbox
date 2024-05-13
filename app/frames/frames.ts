@@ -4,7 +4,8 @@ import { isAddress } from "viem";
 
 type TCMContext = 
   { 
-    error?: string
+    result: any,
+    stumpAddress?: string
   };
 
 const SPY_API = 
@@ -52,7 +53,7 @@ const machinesMiddleware: FramesMiddleware<any, TCMContext> = async (
     // } = await res.json();
 
 
-    return next({ result });
+    return next({ result, stumpAddress });
 
   } catch (e) {
     console.error("Error fetching machines:", e);
