@@ -14,6 +14,7 @@ const handler = frames(async (ctx) => {
   }
 
   if (ctx.result && ctx.result.error) {
+  // @ts-ignore    
     imageSrc = 
     <div style={
       { 
@@ -29,7 +30,7 @@ const handler = frames(async (ctx) => {
   }
 
   else if (ctx.result && ctx.result.machinesInPod) {
-        
+    // @ts-ignore
     imageSrc = 
     <div style={
       { 
