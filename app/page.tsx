@@ -16,8 +16,8 @@ import { vercelURL } from "./utils";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "frames.js starter",
-    description: "This is a frames.js starter template",
+    title: "Spy on Stump",
+    description: "Submission for Redstone Composability Hackathon",
     other: {
       ...(await fetchMetadata(
         new URL(
@@ -36,15 +36,33 @@ export default async function Home({ searchParams }: NextServerPageProps) {
   // then, when done, return next frame
   return (
     <div className="p-4">
-      frames.js starter kit. The Template Frame is on this page, it&apos;s in
-      the html meta tags (inspect source).{" "}
+      {"Hello Employee. You should not be here."}<br /><br />
+      {"The "}
+      <Link href="https://warpcast.com/polats/0xd4e6075c" className="underline">Spy on Stump Service (SSS)</Link>
+
+      
+      {" can only be used via "} 
+      <Link href="https://warpcast.com" className="underline">Warpcast</Link>
+      <br/><br />
+
+      {"SERVICE ANNOUNCEMENT:"}<br/><br />
+
+      {"Due to popular demand, the SSS service occasionally goes down for maintenance."}<br/>
+      {"TCM Personnel can debug the service "}
       <Link href={createDebugUrl(url)} className="underline">
-        Debug
-      </Link>{" "}
-      or see{" "}
-      <Link href="/examples" className="underline">
-        other examples
-      </Link>
+        HERE
+      </Link>{" "}<br/><br />
+
+      {"ALERT:"}<br/><br />
+
+      <Link href="https://thiscursedmachine.fun" className="underline">$BUGS $BUGS $BUGS</Link>
+
+      
+      <div style={{paddingTop: 20}}>
+        <a href="https://thiscursedmachine.fun" className="underline">
+        <img src="/tcm.jpg" className="w-1/2" />      
+        </a>
+      </div>
     </div>
   );
 }
